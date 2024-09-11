@@ -19,7 +19,14 @@ $generatedPassword = $_SESSION['generatedPassword'];
 </head>
 
 <body>
-    
+<div class="container mt-5">
+        <h1>Password Generata</h1>
+        <div class="mt-4">
+            <label class="form-label">La tua password è:</label>
+            <input type="text" class="form-control" value="<?= htmlspecialchars($generatedPassword) ?>" readonly>
+        </div>
+        <a href="index.php" class="btn btn-primary mt-3">Genera un'altra password</a>
+    </div>
 </body>
 
 </html>
