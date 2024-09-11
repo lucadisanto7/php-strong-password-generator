@@ -8,7 +8,23 @@
 </head>
 
 <body>
-    
+<div class="container mt-3">
+        <h1>Generatore Password</h1>
+        <form action="index.php" method="get">
+            <div class="mb-3">
+                <label for="password_length" class="form-label">Inserisci la lunghezza della password</label>
+                <input type="number" class="form-control" id="password_length" name="password_length" min="1" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Crea</button>
+        </form>
+
+        <?php if (isset($_SESSION['error'])): ?>
+            <div class="text-danger mt-3">
+                <?= $_SESSION['error'];
+                unset($_SESSION['error']); ?>
+            </div>
+        <?php endif; ?>
+    </div>
 </body>
 
 </html>
