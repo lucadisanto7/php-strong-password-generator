@@ -1,3 +1,20 @@
+<?php
+session_start();
+include 'functions.php';
+if (isset($_GET['password_length'])) {
+    $passwordLength = intval($_GET['password_length']);
+    if ($passwordLength > 0) {
+        $generatedPassword = randomPassword($passwordLength);
+        $_SESSION['generatedPassword'] = $generatedPassword;
+        header("Location: result.php");
+        exit;
+    } else {
+        $_SESSION['error'] = "Inserisci un numero valido.";
+        header("Location: index.php");
+        exit;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
